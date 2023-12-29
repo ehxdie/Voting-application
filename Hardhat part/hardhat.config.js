@@ -35,7 +35,7 @@ module.exports = {
 
 module.exports = {
   networks: {
-    goerli: {
+    sepolia: {
       url: process.env.API_URL,
       accounts: process.env.PRIVATE_KEY !== undefined && process.env.PRIVATE_KEY1 != undefined &&  process.env.PRIVATE_KEY2 != undefined?
          [process.env.PRIVATE_KEY,process.env.PRIVATE_KEY1,process.env.PRIVATE_KEY2] : [],

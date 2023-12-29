@@ -1,7 +1,7 @@
 // contract info would be stored in this file
-const contractAddress = "0xBeF3600baF76938A42d8E8D13e45D9f0Dbbc36f8";
+const contractAddress = "0x3d78e74924b6f5557509f90938B8BA84613338ad";
 
-const contractAbi = [
+const contractAbi =  [
     {
       "inputs": [
         {

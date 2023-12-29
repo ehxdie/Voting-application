@@ -34,10 +34,15 @@ function App() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner();
+
       // Creates a contract instance that allows for communication with the contract
       const contractInstance = new ethers.Contract (
         contractAddress, contractAbi, signer
       );
+
+      /* Checks if the voter has already voted by checking the voters array inorder to see if the voter address has been given
+         a true value 
+      */
       const voteStatus = await contractInstance.voters(await signer.getAddress());
       setCanVote(voteStatus);
 
@@ -49,11 +54,13 @@ function App() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner();
+
     // Creates a contract instance that allows for communication with the contract
       const contractInstance = new ethers.Contract (
         contractAddress, contractAbi, signer
       );
-
+    
+    // Actual voting process 
       const votingtTransaction = await contractInstance.vote(number);
       await votingtTransaction.wait();
       canVote();
@@ -86,6 +93,7 @@ function App() {
 
   // This function would be called if the metamask account changes, and sets the account state to the current metamask address 
   function handleAccountsChanged(accounts) {
+    
     if (accounts.length > 0 && account !== accounts[0]) {
       setAccount(accounts[0]);
       // Checks if the account can vote
@@ -93,7 +101,6 @@ function App() {
     } else {
       setIsConnected(false);
       setAccount(null);
-      
     }
   }
   
@@ -124,7 +131,6 @@ function App() {
       }
     } else {
       console.error("Metamask is not detected")
-
     }
   }
 

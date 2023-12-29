@@ -46,7 +46,7 @@ constructor(string[] memory _candidateNames) {
     function getAllVotesOfCandiates() public view returns (Candidate[] memory){
         return candidates;
     }
-
+    
 
 }
  

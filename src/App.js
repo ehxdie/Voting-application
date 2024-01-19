@@ -130,13 +130,9 @@ function App() {
         console.error(err);
       }
     } else {
-<<<<<<< HEAD
       console.error("Metamask is not detected");
       alert("Metamask not detected")
 
-=======
-      console.error("Metamask is not detected")
->>>>>>> 53f8f587dd5a2112e8d824a3b974169bc17ead30
     }
   }
 

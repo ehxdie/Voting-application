@@ -12,6 +12,5 @@ npx hardhat node
 npx hardhat run scripts/deploy.js
 
 npx hardhat compile
-npx hardhat run --network goerli scripts/deploy.js
+npx hardhat run --network sepolia scripts/deploy.js
 ```
-s

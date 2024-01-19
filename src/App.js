@@ -123,7 +123,8 @@ function App() {
         console.error(err);
       }
     } else {
-      console.error("Metamask is not detected")
+      console.error("Metamask is not detected");
+      alert("Metamask not detected")
 
     }
   }
@@ -146,7 +147,7 @@ function App() {
        />
        :  
        <Login connectWallet = {connectToMetamask}/>}
-   
+
     </div>
   );
 }
